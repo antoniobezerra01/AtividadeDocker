@@ -15,3 +15,8 @@ chmod +x /usr/local/bin/docker-compose
 mkdir -p /mnt/nfs
 echo "172.31.71.111:/ /mnt/nfs nfs defaults 0 0" >> /etc/fstab
 mount -a
+
+# Clone do repositório e execução do docker-compose
+yum install git -y
+git clone https://github.com/antoniobezerra01/AtividadeDocker.git /home/ec2-user/AtividadeDocker
+docker-compose -f /home/ec2-user/AtividadeDocker/docker-compose.yml up -d
